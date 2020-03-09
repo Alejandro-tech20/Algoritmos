@@ -6,6 +6,12 @@ function checkio(data) {
         return data.indexOf(a) !== data.lastIndexOf(a)
     });
 }
+// =========================================
+function nonUniqueElements(data) {
+    return data.filter(e => data.filter(k => k == e).length > 1);
+}
+// ===========================================
+
 var assert = require('assert');
 
 if (false) {
