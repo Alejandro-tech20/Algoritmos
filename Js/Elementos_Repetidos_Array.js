@@ -11,6 +11,8 @@ function nonUniqueElements(data) {
     return data.filter(e => data.filter(k => k == e).length > 1);
 }
 // ===========================================
+const nonUniqueElements = (d) => d.filter(v => d.indexOf(v) !== d.lastIndexOf(v));
+// =======================================
 
 var assert = require('assert');
 
