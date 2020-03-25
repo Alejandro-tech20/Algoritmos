@@ -1,0 +1,39 @@
+.board {
+    height: 120px;
+    width: 120px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* top: 40px;
+    left: 100px; */
+    border: solid #000 1px;
+}
+
+.roww {
+    width: 100%;
+    height: calc(100%/3);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* background-color: brown; */
+}
+
+.row {
+    /* padding-top: 10px; */
+    /* float: left; */
+    border: solid #fff 1px;
+    /* align-items: flex-start; */
+    /* justify-content: start; */
+    width: calc(100%/3);
+    /* height: calc(100%/3); */
+    background-color: rgb(97, 95, 95);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.row:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, .3);
+}
