@@ -1,0 +1,22 @@
+.para_button {
+    height: 600px;
+    width: 100%;
+    position: absolute;
+    button {
+        height: 45px;
+        width: 70px;
+        top: 10%;
+        left: 50%;
+        // transform: translate(-50%, -50%);
+        position: relative;
+        outline: none;
+        cursor: pointer;
+        transition: 500ms;
+        &:active {
+            transform: scale(.9);
+        }
+        // &:hover {
+        //     transform: scale(.8);
+        // }
+    }
+}
