@@ -1,0 +1,35 @@
+.container1 {
+    height: 70vh;
+    width: 100%;
+    position: absolute;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-evenly;
+    // align-items: center;
+    background: #d7d7;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    // bottom: 0;
+    margin: auto;
+    width: 80px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    // position: absolute; Me Crea un efecto de scroll
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #c7c7d3;
+}
