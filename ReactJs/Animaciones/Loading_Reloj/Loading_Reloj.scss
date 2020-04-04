@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+// body {
+//     width: 100%;
+//     height: 100%;
+//     position: fixed !important;
+//     background-color: #34495e;
+// }
+// ===================
+$bg_screen1: #0e253d;
+$otherColor:#16385c;
+$col_time:#466d96;
+// ====================
+.screen1 {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: $bg_screen1;
+    &_sub {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.container {
+    width: 250px;
+    height: 250px;
+}
+
+.container_box {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    border: solid 5px white;
+    border-radius: 50%;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 48px;
+        display: block;
+        height: 1px;
+        width: 16px;
+        // /*AQUÍ EL ERROR DE INTERPRETACIÓN, SI SE USA EL COLOR SÓLIDO SIN UNA MÍNIMA TRANSPARENCIA LLEVA UN BORDE VIRTUAL HASTA EL INICIO DEL ANCHO DEL ELEMENTO*/
+        border-color: transparent rgba($bg_screen1, .99);
+        border-style: solid;
+        border-width: 78px 40px;
+        border-radius: 3px;
+        background-color: $otherColor;
+        background-image: linear-gradient(to bottom, $col_time 0, white 80px), linear-gradient(to bottom, white 0, white 80px);
+        background-size: 100px 80px, 100px 80px;
+        background-position: 0 0, 0 160px;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        // -webkit-animation: vueltaNoIE11 5s infinite normal ease-out;
+        animation: vueltaNoIE11 5s infinite normal ease-out;
+    }
+}
+
+@keyframes vueltaNoIE11 {
+    0% {
+        background-position: 0 0, 0 161px;
+        background-size: 100px 80px, 100px 80px;
+        transform: rotate(0deg);
+    }
+    60%,
+    70% {
+        background-position: 0 80px, 0 80px;
+        background-size: 100px 0, 100px 80px;
+        transform: rotate(0deg);
+    }
+    90%,
+    100% {
+        background-position: 0 80px, 0 80px;
+        background-size: 100px 0, 100px 80px;
+        transform: rotate(180deg);
+    }
+}
