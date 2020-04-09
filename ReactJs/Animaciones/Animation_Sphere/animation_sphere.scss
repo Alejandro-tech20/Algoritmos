@@ -1,0 +1,90 @@
+// ===============
+$size: 120px;
+$translate_Z: 90px;
+// ================
+.container_dos {
+    width: 100%;
+    height: 100vw;
+    background-color: blanchedalmond;
+    position: absolute;
+    display: flex;
+}
+
+@mixin view($perpective) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    perspective: $perpective;
+    margin: auto;
+}
+
+@mixin plane($w, $h) {
+    width: $w;
+    height: $h;
+    transform-style: preserve-3d;
+}
+
+@mixin center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.view {
+    @include view(400);
+}
+
+.plane {
+    @include plane($size, $size);
+    &.main {
+        @include center;
+        transform: rotateX(60deg) rotateZ(-30deg);
+        animation: rot 8s linear infinite;
+        .circle {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            border-radius: 50%;
+            box-sizing: border-box;
+            box-shadow: 0 0 60px crimson, inset 0 0 60px crimson;
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                @include center;
+                width: 10%;
+                height: 10%;
+                border-radius: 50%;
+                background: crimson;
+                box-shadow: 0 0 60px crimson;
+                box-sizing: border-box;
+            }
+            &::before {
+                transform: translateZ(-$translate_Z);
+            }
+            &::after {
+                transform: translateZ($translate_Z);
+            }
+            @for $i from 1 to 5 {
+                &:nth-child(#{$i}) {
+                    transform: rotateZ($i/5 * 360deg) rotateX($i/5 *360deg);
+                }
+            }
+        }
+    }
+}
+
+@keyframes rot {
+    0% {
+        transform: rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: rotateX(320deg) rotateY(360deg);
+    }
+}
