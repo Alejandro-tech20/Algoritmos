@@ -16,6 +16,7 @@ body{
 a{
     position: relative;
     display: inline-block;
+    margin: 25px;
     padding: 10px 30px;
     text-decoration: none;
     text-transform: uppercase;
